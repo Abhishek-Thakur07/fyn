@@ -42,6 +42,7 @@ function Shop() {
       addToDo(data),
       setValue({ name: "", area: "", category: "", open: "", close: "" })
     );
+
   return (
     <div className="container">
       <div className="row">
@@ -173,22 +174,31 @@ function Shop() {
                       {element.data.category}
                     </p>
                     <p className="card-text">
-                      Opens At: {element.data.open.toString().slice(0, 15)}
+                      <span>
+                        <strong>Opens At: </strong>
+                      </span>
+                      {element.data.open.toString().slice(0, 15)}
                     </p>
                     <p className="card-text">
-                      Closes On: {element.data.close.toString().slice(0, 15)}
+                      <span>
+                        <strong>Closes On: </strong>
+                      </span>
+                      {element.data.close.toString().slice(0, 15)}
                     </p>
-                    <a href="#!" className="card-link">
-                      Store link
+                    <a href="#!" className="me-4">
+                      <button className="card-link btn btn-primary">
+                        Store Link
+                      </button>
                     </a>
-                    <a
-                      href="#!"
-                      className="card-link"
-                      onClick={() =>
-                        dispatch(DeleteToDo(element.id), setValue({}))
-                      }
-                    >
-                      Remove Store
+                    <a href="#!">
+                      <button
+                        className="card-link btn btn-secondary"
+                        onClick={() =>
+                          dispatch(DeleteToDo(element.id), setValue({}))
+                        }
+                      >
+                        Remove Store
+                      </button>
                     </a>
                   </div>
                 </div>
