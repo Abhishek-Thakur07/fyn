@@ -142,7 +142,11 @@ function Shop() {
               })}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            style={{ width: "6rem", height: "3rem" }}
+            className="btn btn-primary"
+          >
             Add
           </button>
         </form>
@@ -154,16 +158,25 @@ function Shop() {
               return (
                 <div className="card card_div my-4 px-4" key={element.id}>
                   <div className="card-body">
-                    <h4 className="card-title">{element.data.name}</h4>
+                    <h4>
+                      <strong
+                        className="card-title"
+                        style={{ fontSize: "2rem" }}
+                      >
+                        {element.data.name}
+                      </strong>
+                    </h4>
                     <h6 className="card-subtitle mb-2 text-muted">
-                      {element.data.area}
+                      <em>{element.data.area}</em>
                     </h6>
-                    <p className="card-text">{element.data.category}</p>
-                    <p className="card-text">
-                      Open At: {element.data.open.toString().slice(0, 25)}
+                    <p className="card-text" style={{ fontWeight: "500" }}>
+                      {element.data.category}
                     </p>
                     <p className="card-text">
-                      Close At: {element.data.close.toString().slice(0, 25)}
+                      Opens At: {element.data.open.toString().slice(0, 15)}
+                    </p>
+                    <p className="card-text">
+                      Closes On: {element.data.close.toString().slice(0, 15)}
                     </p>
                     <a href="#!" className="card-link">
                       Store link
